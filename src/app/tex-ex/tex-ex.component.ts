@@ -8,6 +8,8 @@ import { Component, OnInit ,ViewChild} from '@angular/core';
 export class TexExComponent implements OnInit {
 
   @ViewChild('c') cell: any;
+  @ViewChild('in') in: any;
+
   arr =
     [
       {c:"65,184,241,193",name: "Cutting Lawn"},
@@ -26,7 +28,9 @@ export class TexExComponent implements OnInit {
       {c:"241,260,284,270",name: "$12.00"}
     ];
     cet=80;cel=125;dsl=-1;dst=-1;del=-1;det=-1;t="";i=0; 
-   //bhagyam part 
+   
+  lis:string[]=[];
+
   constructor() { }
   ngOnInit(): void {}
   f(data:string,data2:string)
@@ -71,6 +75,19 @@ export class TexExComponent implements OnInit {
     this.cell.nativeElement.style.left=String(this.cel+this.dsl)+"px";
     this.cell.nativeElement.style.height=String(this.det-this.dst)+"px";
     this.cell.nativeElement.style.width=String(this.del-this.dsl)+"px";
+
+    this.in.nativeElement.value=data2;
   }
-  //bhagyam part
+  
+
+  f2(data:string)
+  {
+     if(data!=""&&this.lis.length<11)
+     {
+      this.in.nativeElement.value="";
+      this.cell.nativeElement.style.visibility="hidden";
+      this.lis.push(data);
+     }
+  }
+
 }

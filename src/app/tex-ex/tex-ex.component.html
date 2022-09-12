@@ -8,5 +8,11 @@
         </map>
         <div class="tex-cell" #c></div>
     </div>
-    <div class="tex-se2"></div>
+    <div class="tex-se2">
+        <input type="text" #in>
+        <button (click)="f2(in.value)">Add Field</button>
+         <ul class="tex-lsp">
+            <li *ngFor="let i of lis;" class="tex-lis">{{i}}</li>
+         </ul>
+    </div>
 </div>
