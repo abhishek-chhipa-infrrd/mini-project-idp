@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.loggedIn = this.loginService.loginAuthenticate(form.value.username, form.value.password);
     if (this.loggedIn) {
-      this.router.navigate(['login'])
-      form.reset()
+      this.router.navigate(['document'])
+      // form.reset()
     }
     else {
       form.reset()
