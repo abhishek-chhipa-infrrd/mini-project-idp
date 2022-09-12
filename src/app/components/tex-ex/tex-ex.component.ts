@@ -65,7 +65,7 @@ export class TexExComponent implements OnInit {
     this.cell.nativeElement.style.height=String(this.det-this.dst)+"px";
     this.cell.nativeElement.style.width=String(this.del-this.dsl)+"px";
 
-    this.in.nativeElement.value= this.in.nativeElement.value+data2;
+    this.in.nativeElement.value= this.in.nativeElement.value + " " + data2;
   }
   
 
