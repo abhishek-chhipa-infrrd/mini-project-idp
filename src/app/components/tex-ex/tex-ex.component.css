@@ -64,8 +64,9 @@ input{
     left: 4vw;
 }
 .tex-lis{
-    height: 5vh;
-    width: 20vw;
+    height: auto;
+    width: auto;
+    max-width: 30vw;
     margin: 2vh;
     color: white;
     text-align: center;
