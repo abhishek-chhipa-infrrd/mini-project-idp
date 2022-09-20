@@ -5,16 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './components/login/login.component';
-import { LoginService } from './services/login.service';
 import { TexExComponent } from './components/tex-ex/tex-ex.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TexExComponent,
-    LoginComponent
+    TexExComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +19,7 @@ import { TexExComponent } from './components/tex-ex/tex-ex.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [LoginService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
