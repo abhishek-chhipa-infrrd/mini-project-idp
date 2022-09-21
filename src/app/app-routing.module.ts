@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TexExComponent } from './components/tex-ex/tex-ex.component';
+import { DocumentComponent } from './components/document/document.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'document',pathMatch:'full'},
-  {path: 'document', component:TexExComponent},
+  {path: 'document', component:DocumentComponent},
 ];
 
 @NgModule({

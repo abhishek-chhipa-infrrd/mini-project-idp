@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TexExComponent } from './tex-ex.component';
+import { DocumentComponent } from './document.component';
 
-describe('TexExComponent', () => {
-  let component: TexExComponent;
-  let fixture: ComponentFixture<TexExComponent>;
+describe('DocumentComponent', () => {
+  let component: DocumentComponent;
+  let fixture: ComponentFixture<DocumentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TexExComponent ]
+      declarations: [ DocumentComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TexExComponent);
+    fixture = TestBed.createComponent(DocumentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

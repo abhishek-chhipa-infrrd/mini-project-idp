@@ -5,13 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TexExComponent } from './components/tex-ex/tex-ex.component';
-
+import { DocumentComponent } from './components/document/document.component';
+import { DocumentViewComponent } from './components/document-view/document-view.component';
+import { EditorComponent } from './components/editor/editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TexExComponent
+    DocumentComponent,
+    DocumentViewComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,

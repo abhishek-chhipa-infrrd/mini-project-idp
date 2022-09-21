@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable,ViewChild } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ImageServiceService {
-
+export class ImageService {
   constructor() { }
 
   arr=[
@@ -42,4 +41,65 @@ export class ImageServiceService {
   {c:"241,227,284,237",name: "$5.99"},
   {c:"241,237,284,249",name: "$0.89"},
   {c:"241,260,284,270",name: "$12.00"}];
+
+
+  cet=80;cel=125;dsl=-1;dst=-1;del=-1;det=-1;t="";i=0;
+  f(data:string,data2:string, cell:any, inn:any)
+  {
+    this.dsl =-1;
+    this.dst =-1;
+    this.del =-1;
+    this.det =-1;
+    this.i = 0;
+    this.t = "";
+    while (this.i < data.length)
+    {
+      if (data[this.i] != ',') 
+      {
+        this.t += data[this.i];
+      }
+      else 
+      {
+        if (this.dsl == -1) {
+          this.dsl = Number(this.t);
+          this.t = "";
+        }
+        else if (this.dst==-1) {
+          this.dst = Number(this.t);
+          this.t = "";
+        }
+        else if (this.del ==-1) {
+          this.del = Number(this.t);
+          this.t = "";
+        }
+        else {
+          this.det = Number(this.t);
+          this.t = "";
+        }
+      }
+      this.i++;
+    }
+    this.det=Number(this.t);
+
+    cell.nativeElement.style.visibility="visible";
+    cell.nativeElement.style.top=String(this.cet+this.dst)+"px";
+    cell.nativeElement.style.left=String(this.cel+this.dsl)+"px";
+    cell.nativeElement.style.height=String(this.det-this.dst)+"px";
+    cell.nativeElement.style.width=String(this.del-this.dsl)+"px";
+
+    if(inn.nativeElement.value!="")
+    inn.nativeElement.value= inn.nativeElement.value + ":" + data2;
+    else
+    inn.nativeElement.value= inn.nativeElement.value + data2;
+  }
+
+  f2(data:string, cell:any, inn:any, lis:string[])
+  {
+     if(data!=""&&lis.length<11)
+     {
+      inn.nativeElement.value="";
+      cell.nativeElement.style.visibility="hidden";
+      lis.push(data);
+     }
+  }
 }
